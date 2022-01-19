@@ -22,6 +22,7 @@ void main() {
             builder: (context) {
               return ThemeContainer(
                 key: key,
+                title: 'Theme',
                 sections: [
                   colors(context),
                   typography(context),

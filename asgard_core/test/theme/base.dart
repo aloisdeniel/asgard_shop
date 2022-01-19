@@ -5,9 +5,10 @@ import 'package:flutter/material.dart';
 class ThemeContainer extends StatelessWidget {
   const ThemeContainer({
     Key? key,
+    required this.title,
     required this.sections,
   }) : super(key: key);
-
+  final String title;
   final List<ThemeSection> sections;
 
   @override
@@ -18,7 +19,10 @@ class ThemeContainer extends StatelessWidget {
         padding: const EdgeInsets.all(10.0),
         child: SpacedColumn(
           spaceBetween: 36.0,
-          children: sections,
+          children: [
+            AppText.title1(title),
+            ...sections,
+          ],
         ),
       ),
     );
