@@ -55,10 +55,10 @@ class AppIconCharactersData extends Equatable {
 
   @override
   List<Object?> get props => [
-        Named('addProduct', addProduct),
-        Named('arrowBack', arrowBack),
-        Named('dismiss', dismiss),
-        Named('tag', tag),
-        Named('vikoin', vikoin),
+        addProduct.named('addProduct'),
+        arrowBack.named('arrowBack'),
+        dismiss.named('dismiss'),
+        tag.named('tag'),
+        vikoin.named('vikoin'),
       ];
 }

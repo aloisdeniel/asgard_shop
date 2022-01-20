@@ -55,10 +55,10 @@ class AppTypographyData extends Equatable {
 
   @override
   List<Object?> get props => [
-        Named('title1', title1),
-        Named('title2', title2),
-        Named('title3', title3),
-        Named('paragraph1', paragraph1),
-        Named('paragraph2', paragraph2),
+        title1.named('title1'),
+        title2.named('title2'),
+        title3.named('title3'),
+        paragraph1.named('paragraph1'),
+        paragraph2.named('paragraph2'),
       ];
 }

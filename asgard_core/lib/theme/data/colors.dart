@@ -33,12 +33,12 @@ class AppColorData extends Equatable {
 
   @override
   List<Object?> get props => [
-        Named('accent', accent),
-        Named('accentHighlight', accentHighlight),
-        Named('foreground', foreground),
-        Named('accentOpposite', accentOpposite),
-        Named('background', background),
-        Named('actionBarForeground', actionBarForeground),
-        Named('actionBarBackground', actionBarBackground),
+        accent.named('accent'),
+        accentHighlight.named('accentHighlight'),
+        foreground.named('foreground'),
+        accentOpposite.named('accentOpposite'),
+        background.named('background'),
+        actionBarForeground.named('actionBarForeground'),
+        actionBarBackground.named('actionBarBackground'),
       ];
 }
