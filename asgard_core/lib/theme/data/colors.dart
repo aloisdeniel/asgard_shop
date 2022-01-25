@@ -2,8 +2,8 @@ import 'package:asgard_core/utils/named.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/rendering.dart';
 
-class AppColorData extends Equatable {
-  const AppColorData({
+class AppColorsData extends Equatable {
+  const AppColorsData({
     required this.accent,
     required this.accentHighlight,
     required this.foreground,
@@ -13,7 +13,7 @@ class AppColorData extends Equatable {
     required this.accentOpposite,
   });
 
-  factory AppColorData.light() => const AppColorData(
+  factory AppColorsData.light() => const AppColorsData(
         accent: Color(0xFF454CFF),
         accentOpposite: Color(0xFFFFFFFF),
         accentHighlight: Color(0xFF2D33B9),

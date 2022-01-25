@@ -1,15 +1,15 @@
 import 'package:asgard_core/utils/named.dart';
 import 'package:equatable/equatable.dart';
 
-class AppIconData extends Equatable {
-  const AppIconData({
+class AppIconsData extends Equatable {
+  const AppIconsData({
     required this.fontFamily,
     required this.fontPackage,
     required this.characters,
   });
 
   /// Icons have been exported with "Export Icon Font" Figma plugin.
-  factory AppIconData.regular() => AppIconData(
+  factory AppIconsData.regular() => AppIconsData(
         fontFamily: 'asgard_icons',
         fontPackage: 'asgard_core',
         characters: AppIconCharactersData.regular(),

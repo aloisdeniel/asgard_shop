@@ -1,6 +1,15 @@
 import 'package:asgard_core/theme/theme.dart';
 import 'package:flutter/widgets.dart';
 
+enum AppIconData {
+  addProduct,
+  arrowBack,
+  dismiss,
+  options,
+  tag,
+  vikoin,
+}
+
 class AppIcon extends StatelessWidget {
   const AppIcon(
     this.content, {

@@ -1,3 +1,4 @@
+import 'package:asgard_core/theme/data/spacing.dart';
 import 'package:asgard_core/theme/data/typography.dart';
 import 'package:equatable/equatable.dart';
 
@@ -11,19 +12,22 @@ class AppThemeData extends Equatable {
     required this.colors,
     required this.typography,
     required this.radius,
+    required this.spacing,
   });
 
   factory AppThemeData.regular() => AppThemeData(
-        icons: AppIconData.regular(),
+        icons: AppIconsData.regular(),
         typography: AppTypographyData.regular(),
-        colors: AppColorData.light(),
+        colors: AppColorsData.light(),
         radius: AppRadiusData.regular(),
+        spacing: AppSpacingData.regular(),
       );
 
-  final AppIconData icons;
-  final AppColorData colors;
+  final AppIconsData icons;
+  final AppColorsData colors;
   final AppTypographyData typography;
   final AppRadiusData radius;
+  final AppSpacingData spacing;
 
   @override
   List<Object?> get props => [
@@ -31,5 +35,6 @@ class AppThemeData extends Equatable {
         colors,
         typography,
         radius,
+        spacing,
       ];
 }
