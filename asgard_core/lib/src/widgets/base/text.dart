@@ -1,4 +1,4 @@
-import 'package:asgard_core/theme/theme.dart';
+import 'package:asgard_core/src/theme/theme.dart';
 import 'package:flutter/widgets.dart';
 
 enum AppTextLevel {

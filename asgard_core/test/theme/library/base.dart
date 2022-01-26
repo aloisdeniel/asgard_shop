@@ -1,5 +1,5 @@
 import 'package:asgard_core/asgard_core.dart';
-import 'package:asgard_core/utils/named.dart';
+import 'package:asgard_core/src/utils/named.dart';
 import 'package:flutter/material.dart';
 
 class ThemeContainer extends StatelessWidget {

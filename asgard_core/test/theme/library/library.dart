@@ -1,5 +1,5 @@
 import 'package:asgard_core/asgard_core.dart';
-import 'package:asgard_core/utils/named.dart';
+import 'package:asgard_core/src/utils/named.dart';
 import 'package:flutter/material.dart';
 
 import 'base.dart';
@@ -7,6 +7,8 @@ import 'base.dart';
 part 'colors.dart';
 part 'icons.dart';
 part 'spacing.dart';
+part 'shadows.dart';
+part 'radius.dart';
 part 'typography.dart';
 
 class AppThemeLibrary extends StatelessWidget {
@@ -17,17 +19,20 @@ class AppThemeLibrary extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: AppTheme(
         data: AppThemeData.regular(),
         child: Builder(
           builder: (context) {
             return ThemeContainer(
-              key: key,
-              title: 'Theme',
+              title: 'Asgard Theme',
               sections: [
                 colors(context),
                 typography(context),
                 icons(context),
+                radius(context),
+                spacing(context),
+                shadow(context),
               ],
             );
           },

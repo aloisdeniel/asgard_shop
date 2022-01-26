@@ -1,8 +1,9 @@
-import 'package:asgard_core/asgard_core.dart';
+import 'package:asgard_core/src/theme/theme.dart';
 import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 
 enum AppGapSize {
+  none,
   small,
   semiSmall,
   regular,
@@ -13,6 +14,8 @@ enum AppGapSize {
 extension AppGapSizeExtension on AppGapSize {
   double getSpacing(AppThemeData theme) {
     switch (this) {
+      case AppGapSize.none:
+        return 0;
       case AppGapSize.small:
         return theme.spacing.small;
       case AppGapSize.semiSmall:

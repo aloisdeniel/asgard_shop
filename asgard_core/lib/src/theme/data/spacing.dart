@@ -1,5 +1,6 @@
-import 'package:asgard_core/utils/named.dart';
+import 'package:asgard_core/src/utils/named.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter/widgets.dart';
 
 class AppSpacingData extends Equatable {
   const AppSpacingData({
@@ -24,6 +25,8 @@ class AppSpacingData extends Equatable {
   final double semiBig;
   final double big;
 
+  AppEdgeInsetsSpacingData asInsets() => AppEdgeInsetsSpacingData(this);
+
   @override
   List<Object?> get props => [
         small.named('small'),
@@ -32,4 +35,19 @@ class AppSpacingData extends Equatable {
         semiBig.named('semiBig'),
         big.named('big'),
       ];
+}
+
+class AppEdgeInsetsSpacingData extends Equatable {
+  const AppEdgeInsetsSpacingData(this._spacing);
+
+  EdgeInsets get small => EdgeInsets.all(_spacing.small);
+  EdgeInsets get semiSmall => EdgeInsets.all(_spacing.semiSmall);
+  EdgeInsets get regular => EdgeInsets.all(_spacing.regular);
+  EdgeInsets get semiBig => EdgeInsets.all(_spacing.semiBig);
+  EdgeInsets get big => EdgeInsets.all(_spacing.big);
+
+  final AppSpacingData _spacing;
+
+  @override
+  List<Object?> get props => [_spacing];
 }

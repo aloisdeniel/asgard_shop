@@ -1,10 +1,8 @@
-import 'package:asgard_core/asgard_core.dart';
-import 'package:asgard_core/utils/named.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../base/font.dart';
-import 'library.dart';
+import 'library/library.dart';
 
 void main() {
   testWidgets('theme rendering', (tester) async {
@@ -12,9 +10,11 @@ void main() {
 
     final key = UniqueKey();
 
-    tester.binding.window.physicalSizeTestValue = const Size(1920, 3200);
+    tester.binding.window.physicalSizeTestValue = const Size(1920, 4200);
 
-    await tester.pumpWidget(const AppThemeLibrary());
+    await tester.pumpWidget(AppThemeLibrary(
+      key: key,
+    ));
 
     await expectLater(
       find.byKey(key),
