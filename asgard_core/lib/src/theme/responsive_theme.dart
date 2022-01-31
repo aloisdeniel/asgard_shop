@@ -15,12 +15,12 @@ class AppResponsiveTheme extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final platformBrightness = MediaQuery.platformBrightnessOf(context);
-    final useDarkTheme = platformBrightness == ui.Brightness.dark;
-    final highContrast = MediaQuery.highContrastOf(context);
     var theme = this.theme ?? AppThemeData.regular();
 
     if (this.theme == null) {
+      final platformBrightness = MediaQuery.platformBrightnessOf(context);
+      final useDarkTheme = platformBrightness == ui.Brightness.dark;
+      final highContrast = MediaQuery.highContrastOf(context);
       if (useDarkTheme) {
         theme = theme.withColors(AppColorsData.dark());
       }
