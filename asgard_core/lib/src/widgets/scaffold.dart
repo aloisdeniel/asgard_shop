@@ -31,7 +31,10 @@ class AppScaffold extends StatelessWidget {
                 mediaQuery.padding.bottom,
                 theme.spacing.semiBig,
               ),
-              child: floatingBar,
+              child: Hero(
+                tag: 'navigation_bar',
+                child: floatingBar,
+              ),
             ),
         ],
       ),

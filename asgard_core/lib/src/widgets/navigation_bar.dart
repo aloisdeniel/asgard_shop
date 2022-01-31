@@ -57,3 +57,32 @@ class NavigationBarContainer extends StatelessWidget {
     );
   }
 }
+
+class NotificationBarProvider extends InheritedWidget {
+  const NotificationBarProvider({
+    Key? key,
+    required Widget child,
+    required this.body,
+    required this.isVisible,
+    this.leading,
+    this.trailing,
+  }) : super(key: key, child: child);
+
+  final bool isVisible;
+  final Widget? leading;
+  final Widget body;
+  final Widget? trailing;
+
+  static NotificationBarProvider of(BuildContext context) {
+    return context
+        .dependOnInheritedWidgetOfExactType<NotificationBarProvider>()!;
+  }
+
+  @override
+  bool updateShouldNotify(covariant NotificationBarProvider oldWidget) {
+    return isVisible != oldWidget.isVisible ||
+        leading?.key != oldWidget.leading?.key ||
+        trailing?.key != oldWidget.trailing?.key ||
+        body.key != oldWidget.body.key;
+  }
+}

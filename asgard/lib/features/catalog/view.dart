@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import 'package:asgard/base/state_provider.dart';
 import 'package:asgard/services/services.dart';
 import 'package:asgard_core/asgard_core.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
 import 'state.dart';
@@ -95,6 +96,7 @@ class _BodyWithProductsState extends State<_BodyWithProducts> {
                   aspectRatio: product.imageAspectRatio,
                   onTap: () {
                     print('product tapped!');
+                    context.push('/detail');
                   },
                 ),
               ),

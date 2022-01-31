@@ -1,4 +1,6 @@
-import 'package:flutter/widgets.dart';
+import 'package:asgard_core/asgard_core.dart';
+
+import 'widgets/navigation_bar.dart';
 
 class ProductDetailView extends StatelessWidget {
   const ProductDetailView({
@@ -7,6 +9,9 @@ class ProductDetailView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const AppScaffold(
+      body: SizedBox(),
+      floatingBar: ProductDetailNavigationBar(),
+    );
   }
 }

@@ -1,6 +1,7 @@
 export 'base/base.dart';
-export 'button.dart';
-export 'action_button.dart';
+export 'buttons/action_button.dart';
+export 'buttons/back_button.dart';
+export 'buttons/button.dart';
 export 'price_label.dart';
 export 'product_tile.dart';
 export 'notifiable_bar.dart';
