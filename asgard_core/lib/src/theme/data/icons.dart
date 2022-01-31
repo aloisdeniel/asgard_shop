@@ -79,9 +79,9 @@ class AppIconSizesData extends Equatable {
   });
 
   factory AppIconSizesData.regular() => const AppIconSizesData(
-        small: 20,
-        regular: 28,
-        big: 40,
+        small: 16.0,
+        regular: 22.0,
+        big: 32.0,
       );
 
   final double small;

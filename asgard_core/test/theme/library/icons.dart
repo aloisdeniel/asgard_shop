@@ -14,7 +14,7 @@ ThemeSection icons(BuildContext context) {
               builder: (context, String v, _) => AppIcon(
                 v,
                 color: Colors.black,
-                size: 24,
+                size: AppIconSize.small,
               ),
             ),
           ),
@@ -29,7 +29,7 @@ ThemeSection icons(BuildContext context) {
               builder: (context, String v, _) => AppIcon(
                 v,
                 color: Colors.black,
-                size: 64,
+                size: AppIconSize.regular,
               ),
             ),
           ),

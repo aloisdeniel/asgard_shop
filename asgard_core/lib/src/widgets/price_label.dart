@@ -24,13 +24,14 @@ class PriceLabel extends StatelessWidget {
         horizontal: AppGapSize.regular,
       ),
       child: Row(
+        mainAxisSize: MainAxisSize.min,
         children: [
           AppText.title3(
             value.toString(),
             color: theme.colors.accentOpposite,
           ),
           const AppGap.small(),
-          AppIcon.regular(
+          AppIcon.small(
             theme.icons.characters.vikoin,
             color: theme.colors.accentOpposite,
           ),

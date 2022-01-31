@@ -15,6 +15,7 @@ class AppText extends StatelessWidget {
     Key? key,
     this.color,
     this.fontSize,
+    this.maxLines,
     this.level = AppTextLevel.paragraph1,
   }) : super(key: key);
 
@@ -23,6 +24,7 @@ class AppText extends StatelessWidget {
     Key? key,
     this.color,
     this.fontSize,
+    this.maxLines,
   })  : level = AppTextLevel.paragraph1,
         super(key: key);
 
@@ -31,6 +33,7 @@ class AppText extends StatelessWidget {
     Key? key,
     this.color,
     this.fontSize,
+    this.maxLines,
   })  : level = AppTextLevel.paragraph2,
         super(key: key);
 
@@ -39,6 +42,7 @@ class AppText extends StatelessWidget {
     Key? key,
     this.color,
     this.fontSize,
+    this.maxLines,
   })  : level = AppTextLevel.title1,
         super(key: key);
 
@@ -47,6 +51,7 @@ class AppText extends StatelessWidget {
     Key? key,
     this.color,
     this.fontSize,
+    this.maxLines,
   })  : level = AppTextLevel.title2,
         super(key: key);
 
@@ -55,6 +60,7 @@ class AppText extends StatelessWidget {
     Key? key,
     this.color,
     this.fontSize,
+    this.maxLines,
   })  : level = AppTextLevel.title3,
         super(key: key);
 
@@ -62,6 +68,7 @@ class AppText extends StatelessWidget {
   final AppTextLevel level;
   final Color? color;
   final double? fontSize;
+  final int? maxLines;
 
   @override
   Widget build(BuildContext context) {
@@ -87,6 +94,7 @@ class AppText extends StatelessWidget {
         color: color,
         fontSize: fontSize,
       ),
+      maxLines: maxLines,
     );
   }
 }

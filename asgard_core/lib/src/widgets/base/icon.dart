@@ -64,6 +64,7 @@ class AppIcon extends StatelessWidget {
         package: theme.icons.fontPackage,
         color: color,
         fontSize: theme.icons.sizes.resolve(size),
+        decoration: TextDecoration.none,
       ),
     );
   }
@@ -106,6 +107,7 @@ class AppAnimatedIcon extends StatelessWidget {
         package: theme.icons.fontPackage,
         color: color,
         fontSize: theme.icons.sizes.resolve(size),
+        decoration: TextDecoration.none,
       ),
       duration: duration,
     );

@@ -11,6 +11,7 @@ void main() {
     final key = UniqueKey();
 
     tester.binding.window.physicalSizeTestValue = const Size(1920, 4200);
+    tester.binding.window.devicePixelRatioTestValue = 1.0;
 
     await tester.pumpWidget(AppThemeLibrary(
       key: key,

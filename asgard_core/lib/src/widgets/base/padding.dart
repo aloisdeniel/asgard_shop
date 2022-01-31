@@ -26,6 +26,36 @@ class AppEdgeInsets extends Equatable {
     this.bottom = AppGapSize.none,
   });
 
+  const AppEdgeInsets.small()
+      : left = AppGapSize.small,
+        top = AppGapSize.small,
+        right = AppGapSize.small,
+        bottom = AppGapSize.small;
+
+  const AppEdgeInsets.semiSmall()
+      : left = AppGapSize.semiSmall,
+        top = AppGapSize.semiSmall,
+        right = AppGapSize.semiSmall,
+        bottom = AppGapSize.semiSmall;
+
+  const AppEdgeInsets.regular()
+      : left = AppGapSize.regular,
+        top = AppGapSize.regular,
+        right = AppGapSize.regular,
+        bottom = AppGapSize.regular;
+
+  const AppEdgeInsets.semiBig()
+      : left = AppGapSize.semiBig,
+        top = AppGapSize.semiBig,
+        right = AppGapSize.semiBig,
+        bottom = AppGapSize.semiBig;
+
+  const AppEdgeInsets.big()
+      : left = AppGapSize.big,
+        top = AppGapSize.big,
+        right = AppGapSize.big,
+        bottom = AppGapSize.big;
+
   final AppGapSize left;
   final AppGapSize top;
   final AppGapSize right;

@@ -1,8 +1,11 @@
+import 'package:asgard_core/src/theme/data/images.dart';
 import 'package:asgard_core/src/theme/data/spacing.dart';
 import 'package:asgard_core/src/theme/data/typography.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter/foundation.dart';
 
 import 'colors.dart';
+import 'durations.dart';
 import 'icons.dart';
 import 'radius.dart';
 import 'shadows.dart';
@@ -15,7 +18,10 @@ class AppThemeData extends Equatable {
     required this.radius,
     required this.spacing,
     required this.shadow,
-  });
+    required this.durations,
+    required this.images,
+    TargetPlatform? platform,
+  }) : _platform = platform;
 
   factory AppThemeData.regular() => AppThemeData(
         icons: AppIconsData.regular(),
@@ -24,6 +30,8 @@ class AppThemeData extends Equatable {
         radius: const AppRadiusData.regular(),
         spacing: AppSpacingData.regular(),
         shadow: AppShadowsData.regular(),
+        durations: AppDurationsData.regular(),
+        images: AppImagesData.regular(),
       );
 
   final AppIconsData icons;
@@ -32,14 +40,36 @@ class AppThemeData extends Equatable {
   final AppRadiusData radius;
   final AppSpacingData spacing;
   final AppShadowsData shadow;
+  final AppDurationsData durations;
+  final AppImagesData images;
+
+  final TargetPlatform? _platform;
+  TargetPlatform get platform => defaultTargetPlatform;
 
   @override
   List<Object?> get props => [
+        platform,
         icons,
         colors,
         typography,
         radius,
         spacing,
         shadow,
+        durations,
+        images,
       ];
+
+  AppThemeData withColors(AppColorsData colors) {
+    return AppThemeData(
+      platform: platform,
+      colors: colors,
+      durations: durations,
+      icons: icons,
+      images: images,
+      radius: radius,
+      shadow: shadow,
+      spacing: spacing,
+      typography: typography,
+    );
+  }
 }
