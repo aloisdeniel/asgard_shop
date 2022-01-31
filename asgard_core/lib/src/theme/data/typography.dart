@@ -49,6 +49,44 @@ class AppTypographyData extends Equatable {
         ),
       );
 
+  factory AppTypographyData.small() => const AppTypographyData(
+        paragraph1: TextStyle(
+          fontFamily: 'Poppins',
+          package: 'asgard_core',
+          fontWeight: FontWeight.w400,
+          fontSize: 10,
+          decoration: TextDecoration.none,
+        ),
+        paragraph2: TextStyle(
+          fontFamily: 'Poppins',
+          package: 'asgard_core',
+          fontWeight: FontWeight.w400,
+          fontSize: 9,
+          decoration: TextDecoration.none,
+        ),
+        title1: TextStyle(
+          fontFamily: 'Poppins',
+          package: 'asgard_core',
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
+          decoration: TextDecoration.none,
+        ),
+        title2: TextStyle(
+          fontFamily: 'Poppins',
+          package: 'asgard_core',
+          fontSize: 14,
+          fontWeight: FontWeight.bold,
+          decoration: TextDecoration.none,
+        ),
+        title3: TextStyle(
+          fontFamily: 'Poppins',
+          package: 'asgard_core',
+          fontSize: 12,
+          fontWeight: FontWeight.bold,
+          decoration: TextDecoration.none,
+        ),
+      );
+
   final TextStyle paragraph1;
   final TextStyle paragraph2;
   final TextStyle title1;

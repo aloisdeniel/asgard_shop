@@ -6,6 +6,7 @@ import 'package:flutter/foundation.dart';
 
 import 'colors.dart';
 import 'durations.dart';
+import 'form_factor.dart';
 import 'icons.dart';
 import 'radius.dart';
 import 'shadows.dart';
@@ -20,10 +21,12 @@ class AppThemeData extends Equatable {
     required this.shadow,
     required this.durations,
     required this.images,
+    required this.formFactor,
     TargetPlatform? platform,
   }) : _platform = platform;
 
   factory AppThemeData.regular() => AppThemeData(
+        formFactor: AppFormFactor.medium,
         icons: AppIconsData.regular(),
         typography: AppTypographyData.regular(),
         colors: AppColorsData.light(),
@@ -42,7 +45,7 @@ class AppThemeData extends Equatable {
   final AppShadowsData shadow;
   final AppDurationsData durations;
   final AppImagesData images;
-
+  final AppFormFactor formFactor;
   final TargetPlatform? _platform;
   TargetPlatform get platform => defaultTargetPlatform;
 
@@ -62,6 +65,37 @@ class AppThemeData extends Equatable {
   AppThemeData withColors(AppColorsData colors) {
     return AppThemeData(
       platform: platform,
+      formFactor: formFactor,
+      colors: colors,
+      durations: durations,
+      icons: icons,
+      images: images,
+      radius: radius,
+      shadow: shadow,
+      spacing: spacing,
+      typography: typography,
+    );
+  }
+
+  AppThemeData withFormFactor(AppFormFactor formFactor) {
+    return AppThemeData(
+      platform: platform,
+      formFactor: formFactor,
+      colors: colors,
+      durations: durations,
+      icons: icons,
+      images: images,
+      radius: radius,
+      shadow: shadow,
+      spacing: spacing,
+      typography: typography,
+    );
+  }
+
+  AppThemeData withTypography(AppTypographyData typography) {
+    return AppThemeData(
+      platform: platform,
+      formFactor: formFactor,
       colors: colors,
       durations: durations,
       icons: icons,

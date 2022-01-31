@@ -1,0 +1,4 @@
+enum AppFormFactor {
+  small,
+  medium,
+}
