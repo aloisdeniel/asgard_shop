@@ -20,12 +20,10 @@ class CatalogHeader extends StatelessWidget {
           padding: EdgeInsets.all(
             theme.spacing.semiBig,
           ),
-          child: SizedBox(
+          child: Container(
             height: theme.typography.title1.fontSize! * 1.5,
-            child: SvgPicture.asset(
-              'assets/images/logo.svg',
-              alignment: Alignment.centerLeft,
-            ),
+            alignment: Alignment.centerLeft,
+            child: SvgPicture(theme.images.appLogo),
           ),
         ),
       ),

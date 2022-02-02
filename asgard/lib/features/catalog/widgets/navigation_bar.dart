@@ -10,26 +10,37 @@ class CatalogNavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = AppTheme.of(context);
-    return NotificationBar(
+    return const NotificationBar(
       child: AppNavigationBar(
-        leading: const CurrentUserAvatar(),
-        trailing: const CartOverview(),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            AppText.paragraph1(
-              'Account',
-              color: theme.colors.actionBarForeground,
-            ),
-            AppText.title3(
-              'John',
-              color: theme.colors.actionBarForeground,
-            ),
-          ],
-        ),
+        leading: CurrentUserAvatar(),
+        summary: CartOverview(),
+        body: CurrentUserAccount(),
       ),
+    );
+  }
+}
+
+class CurrentUserAccount extends StatelessWidget {
+  const CurrentUserAccount({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = AppTheme.of(context);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        AppText.paragraph1(
+          'Account',
+          color: theme.colors.actionBarForeground,
+        ),
+        AppText.title3(
+          'John',
+          color: theme.colors.actionBarForeground,
+        ),
+      ],
     );
   }
 }

@@ -6,10 +6,12 @@ class AppScaffold extends StatelessWidget {
   const AppScaffold({
     Key? key,
     required this.body,
+    this.backgroundColor,
     this.floatingBar,
   }) : super(key: key);
 
   final Widget body;
+  final Color? backgroundColor;
   final Widget? floatingBar;
 
   @override
@@ -18,23 +20,26 @@ class AppScaffold extends StatelessWidget {
     final theme = AppTheme.of(context);
     final floatingBar = this.floatingBar;
     return Container(
-      color: theme.colors.background,
+      color: backgroundColor ?? theme.colors.background,
       child: Stack(
         children: [
           body,
           if (floatingBar != null)
             AnimatedPositioned(
               duration: theme.durations.regular,
-              left: theme.spacing.semiBig,
-              right: theme.spacing.semiBig,
+              left: math.max(
+                mediaQuery.padding.left,
+                theme.spacing.regular,
+              ),
+              right: math.max(
+                mediaQuery.padding.right,
+                theme.spacing.regular,
+              ),
               bottom: math.max(
                 mediaQuery.padding.bottom,
-                theme.spacing.semiBig,
+                theme.spacing.regular,
               ),
-              child: Hero(
-                tag: 'navigation_bar',
-                child: floatingBar,
-              ),
+              child: floatingBar,
             ),
         ],
       ),

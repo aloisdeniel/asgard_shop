@@ -3,6 +3,8 @@ import 'package:asgard_core/src/theme/data/spacing.dart';
 import 'package:asgard_core/src/theme/data/typography.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import 'colors.dart';
 import 'durations.dart';
@@ -25,7 +27,10 @@ class AppThemeData extends Equatable {
     TargetPlatform? platform,
   }) : _platform = platform;
 
-  factory AppThemeData.regular() => AppThemeData(
+  factory AppThemeData.regular({
+    required PictureProvider appLogo,
+  }) =>
+      AppThemeData(
         formFactor: AppFormFactor.medium,
         icons: AppIconsData.regular(),
         typography: AppTypographyData.regular(),
@@ -34,7 +39,9 @@ class AppThemeData extends Equatable {
         spacing: AppSpacingData.regular(),
         shadow: AppShadowsData.regular(),
         durations: AppDurationsData.regular(),
-        images: AppImagesData.regular(),
+        images: AppImagesData.regular(
+          appLogo: appLogo,
+        ),
       );
 
   final AppIconsData icons;
@@ -63,6 +70,21 @@ class AppThemeData extends Equatable {
       ];
 
   AppThemeData withColors(AppColorsData colors) {
+    return AppThemeData(
+      platform: platform,
+      formFactor: formFactor,
+      colors: colors,
+      durations: durations,
+      icons: icons,
+      images: images,
+      radius: radius,
+      shadow: shadow,
+      spacing: spacing,
+      typography: typography,
+    );
+  }
+
+  AppThemeData withImages(AppImagesData images) {
     return AppThemeData(
       platform: platform,
       formFactor: formFactor,

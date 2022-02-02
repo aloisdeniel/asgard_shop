@@ -1,7 +1,8 @@
 part of 'library.dart';
 
 ThemeSection icons(BuildContext context) {
-  final icons = AppTheme.of(context).icons;
+  final theme = AppTheme.of(context);
+  final icons = theme.icons;
   return ThemeSection(
     title: 'Icons',
     categories: [
@@ -13,7 +14,7 @@ ThemeSection icons(BuildContext context) {
               value: (c as Named<String>),
               builder: (context, String v, _) => AppIcon(
                 v,
-                color: Colors.black,
+                color: theme.colors.foreground,
                 size: AppIconSize.small,
               ),
             ),
@@ -28,7 +29,7 @@ ThemeSection icons(BuildContext context) {
               value: (c as Named<String>),
               builder: (context, String v, _) => AppIcon(
                 v,
-                color: Colors.black,
+                color: theme.colors.foreground,
                 size: AppIconSize.regular,
               ),
             ),

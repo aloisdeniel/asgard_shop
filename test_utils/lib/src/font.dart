@@ -2,21 +2,21 @@ import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 /// This loads fonts for the test runner.
-Future<void> loadFonts() async {
+Future<void> loadTestFonts() async {
   TestWidgetsFlutterBinding.ensureInitialized();
   await _loadFamily(
     'asgard_core',
     'asgard_icons',
     [
-      'assets/fonts/asgard_icons.ttf',
+      'fonts/asgard_icons.ttf',
     ],
   );
   await _loadFamily(
     'asgard_core',
     'Poppins',
     [
-      'assets/fonts/Poppins-Regular.ttf',
-      'assets/fonts/Poppins-Bold.ttf',
+      'fonts/Poppins-Regular.ttf',
+      'fonts/Poppins-Bold.ttf',
     ],
   );
 }

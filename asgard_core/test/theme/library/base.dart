@@ -13,12 +13,13 @@ class ThemeContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = AppTheme.of(context);
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: theme.colors.background,
       body: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: theme.spacing.asInsets().big,
         child: SpacedColumn(
-          spaceBetween: 36.0,
+          spaceBetween: theme.spacing.semiBig,
           children: [
             AppText.title1(title),
             ...sections,
@@ -123,16 +124,16 @@ class NamedCell<T> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const color = Colors.grey;
+    final theme = AppTheme.of(context);
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          padding: const EdgeInsets.all(8),
+          padding: theme.spacing.asInsets().semiSmall,
           decoration: BoxDecoration(
             border: Border.all(
-              color: color,
+              color: theme.colors.foreground.withAlpha(125),
             ),
             borderRadius: BorderRadius.circular(4),
           ),
@@ -140,7 +141,7 @@ class NamedCell<T> extends StatelessWidget {
         ),
         AppText.paragraph2(
           value.name,
-          color: color,
+          color: theme.colors.foreground.withAlpha(125),
           fontSize: 8,
         ),
       ],

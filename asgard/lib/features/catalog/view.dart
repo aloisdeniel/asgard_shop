@@ -1,6 +1,5 @@
 import 'dart:math' as math;
 
-import 'package:asgard/base/state_provider.dart';
 import 'package:asgard/services/services.dart';
 import 'package:asgard_core/asgard_core.dart';
 import 'package:go_router/go_router.dart';
@@ -17,17 +16,26 @@ class CatalogView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StateProvider<CatalogState, CatalogNotifier>(
-      create: (context) => CatalogNotifier.demo(),
-      child: const CatalogMobileLayout(),
+    return CatalogMobileLayout(
+      onViewProduct: (productId) {
+        context.push('/detail/$productId');
+      },
     );
   }
 }
 
+/// State dependencies :
+/// * [CatalogState]
+/// * [AccountState]
+/// * [NotificationsState]
+/// * [CartState]
 class CatalogMobileLayout extends StatelessWidget {
   const CatalogMobileLayout({
     Key? key,
+    required this.onViewProduct,
   }) : super(key: key);
+
+  final ValueChanged<String> onViewProduct;
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +43,7 @@ class CatalogMobileLayout extends StatelessWidget {
     return AppScaffold(
       body: _BodyWithProducts(
         products: products,
+        onViewProduct: onViewProduct,
       ),
       floatingBar: const CatalogNavigationBar(),
     );
@@ -45,8 +54,10 @@ class _BodyWithProducts extends StatefulWidget {
   const _BodyWithProducts({
     Key? key,
     required this.products,
+    required this.onViewProduct,
   }) : super(key: key);
 
+  final ValueChanged<String> onViewProduct;
   final List<Product> products;
 
   @override
@@ -75,32 +86,32 @@ class _BodyWithProductsState extends State<_BodyWithProducts> {
               controller: _controller,
             ),
           ),
-          AppTileSliverGrid(
-            padding: EdgeInsets.only(
-              left: theme.spacing.semiBig,
-              top: theme.spacing.semiBig,
-              right: theme.spacing.semiBig,
-              bottom: math.max(
-                mediaQuery.padding.bottom,
-                theme.spacing.semiBig,
-              ),
-            ),
-            crossAxisCount: (constraints.maxWidth / 200).ceil(),
-            children: [
-              ...widget.products.map(
-                (product) => ProductTile(
-                  key: Key(product.id),
-                  name: product.name,
-                  image: NetworkImage(product.image),
-                  price: product.price.toDouble(),
-                  aspectRatio: product.imageAspectRatio,
-                  onTap: () {
-                    print('product tapped!');
-                    context.push('/detail');
-                  },
+          SliverSafeArea(
+            top: false,
+            sliver: AppTileSliverGrid(
+              padding: EdgeInsets.only(
+                left: theme.spacing.semiBig,
+                top: theme.spacing.semiBig,
+                right: theme.spacing.semiBig,
+                bottom: math.max(
+                  mediaQuery.padding.bottom,
+                  theme.spacing.semiBig,
                 ),
               ),
-            ],
+              crossAxisCount: (constraints.maxWidth / 200).ceil(),
+              children: [
+                ...widget.products.map(
+                  (product) => ProductTile(
+                    key: Key(product.id),
+                    name: product.name,
+                    image: NetworkImage(product.image),
+                    price: product.price.toDouble(),
+                    aspectRatio: product.imageAspectRatio,
+                    onTap: () => widget.onViewProduct(product.id),
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       );

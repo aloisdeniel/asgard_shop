@@ -42,6 +42,8 @@ dependencies:
   go_router: ^3.0.1
 
 dev_dependencies:
+  test_utils:
+    path: ../test_utils
   flutter_test:
     sdk: flutter
 

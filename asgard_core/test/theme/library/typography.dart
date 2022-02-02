@@ -15,7 +15,7 @@ ThemeSection typography(BuildContext context) {
                 value: named,
                 builder: (context, TextStyle v, _) => Text(
                   'Hello!',
-                  style: named.value,
+                  style: named.value.copyWith(color: theme.colors.foreground),
                 ),
               );
             },

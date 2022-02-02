@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart' as cupertino;
 import 'package:flutter/material.dart' as material;
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import 'buttons/button.dart';
 
@@ -12,6 +13,8 @@ class AppBase extends StatelessWidget {
     Key? key,
     required this.routerDelegate,
     required this.routeInformationParser,
+    required this.appLogo,
+    this.darkAppLogo,
     this.routeInformationProvider,
     this.backButtonDispatcher,
     this.debugShowGrid = false,
@@ -57,6 +60,8 @@ class AppBase extends StatelessWidget {
   final bool showPerformanceOverlay;
   final Locale? locale;
   final TransitionBuilder? builder;
+  final PictureProvider appLogo;
+  final PictureProvider? darkAppLogo;
 
   // We provide material and cupertino localization delegate even it will
   // probably not be used.
@@ -91,6 +96,8 @@ class AppBase extends StatelessWidget {
 
   Widget _buildWidgetApp(BuildContext context) {
     Widget result = AppResponsiveTheme(
+      appLogo: appLogo,
+      darkAppLogo: darkAppLogo,
       child: cupertino.Builder(builder: (context) {
         final theme = AppTheme.of(context);
         return WidgetsApp.router(

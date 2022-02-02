@@ -1,5 +1,5 @@
 import 'package:asgard_core/asgard_core.dart';
-import '../base/image_mock.dart';
+import 'package:test_utils/test_utils.dart';
 import '../base/widget.dart';
 
 void main() async {
@@ -12,12 +12,12 @@ void main() async {
       'idle': const ProductTileLayout.idle(
         name: name,
         price: price,
-        image: dogImage,
+        image: kDogImage,
       ),
       'hovered': const ProductTileLayout.hovered(
         name: name,
         price: price,
-        image: dogImage,
+        image: kDogImage,
       ),
     },
   );

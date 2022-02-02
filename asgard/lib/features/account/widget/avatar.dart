@@ -26,13 +26,9 @@ class UserAvatar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = AppTheme.of(context);
-    final size = theme.typography.title1.fontSize! * 1.2;
     return Image.network(
       url,
       fit: BoxFit.cover,
-      width: size,
-      height: size,
       frameBuilder: (context, child, frame, wasSynchronouslyLoaded) {
         return ClipOval(
           child: child,

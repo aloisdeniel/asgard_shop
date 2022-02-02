@@ -1,19 +1,20 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 
-const dogImage = NetworkImage('https://dog.png');
+const kDogImage = NetworkImage('https://dog.png');
 
 Future<void> ensureImagesPreloaded(WidgetTester tester) async {
   // Workaround to force load images so that it appears in golden renders
   await tester.pumpWidget(const SizedBox());
   await tester.runAsync(() {
     final context = tester.element(find.byType(SizedBox));
-    return precacheImage(dogImage, context);
+    return precacheImage(kDogImage, context);
   });
 }
 

@@ -13,9 +13,12 @@ dependencies:
   flutter:
     sdk: flutter
   gap: ^2.0.0
+  sliver_tools: ^0.2.5
+  flutter_svg: ^1.0.3
 
 dev_dependencies:
-  mockito: 
+  test_utils:
+    path: ../test_utils 
   flutter_test:
     sdk: flutter
   flutter_lints: ^1.0.0
@@ -30,9 +33,10 @@ flutter:
   fonts:
     - family: asgard_icons
       fonts:
-        - asset: assets/fonts/asgard_icons.ttf
+        - asset: packages/asgard_core/fonts/asgard_icons.ttf
     - family: Poppins
       fonts:
-        - asset: assets/fonts/Poppins-Regular.ttf
-        - asset: assets/fonts/Poppins-Bold.ttf
+        - asset: packages/asgard_core/fonts/Poppins-Regular.ttf
+          weight: 400
+        - asset: packages/asgard_core/fonts/Poppins-Bold.ttf
           weight: 700

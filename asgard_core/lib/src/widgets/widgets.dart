@@ -5,6 +5,7 @@ export 'buttons/button.dart';
 export 'price_label.dart';
 export 'product_tile.dart';
 export 'notifiable_bar.dart';
+export 'content_sheet.dart';
 export 'tile_sliver_grid.dart';
 export 'scaffold.dart';
 export 'navigation_bar.dart';

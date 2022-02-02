@@ -3,9 +3,11 @@ import 'package:asgard/features/cart/state.dart';
 import 'package:asgard/features/catalog/view.dart';
 import 'package:asgard/features/notifications/state.dart';
 import 'package:asgard_core/asgard_core.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
 import 'base/state_provider.dart';
+import 'features/catalog/state.dart';
 import 'features/product_detail/view.dart';
 
 class App extends StatelessWidget {
@@ -20,24 +22,40 @@ class App extends StatelessWidget {
         builder: (context, state) => const CatalogView(),
       ),
       GoRoute(
-        path: '/detail',
-        builder: (context, state) => const ProductDetailView(),
+        path: '/detail/:id',
+        pageBuilder: (context, state) => TransparentPage<void>(
+          key: state.pageKey,
+          child: ProductDetailView(
+            productId: state.params['id']!,
+          ),
+        ),
       ),
     ],
   );
 
   @override
   Widget build(BuildContext context) {
-    return StateProvider<NotificationsState, NotificationsNotifier>(
-      create: (context) => NotificationsNotifier.demo(),
-      child: StateProvider<CartState, CartNotifier>(
-        create: (context) => CartNotifier.demo(),
-        child: StateProvider<AccountState, AccountNotifier>(
-          create: (context) => AccountNotifier.demo(),
-          child: AppBase(
-            routeInformationParser: _router.routeInformationParser,
-            routerDelegate: _router.routerDelegate,
-            title: 'Asgard',
+    return StateProvider<CatalogState, CatalogNotifier>(
+      create: (context) => CatalogNotifier.demo(),
+      child: StateProvider<NotificationsState, NotificationsNotifier>(
+        create: (context) => NotificationsNotifier.demo(),
+        child: StateProvider<CartState, CartNotifier>(
+          create: (context) => CartNotifier.demo(),
+          child: StateProvider<AccountState, AccountNotifier>(
+            create: (context) => AccountNotifier.demo(),
+            child: AppBase(
+              appLogo: ExactAssetPicture(
+                SvgPicture.svgStringDecoderBuilder,
+                'assets/images/logo.svg',
+              ),
+              darkAppLogo: ExactAssetPicture(
+                SvgPicture.svgStringDecoderBuilder,
+                'assets/images/logo_dark.svg',
+              ),
+              routeInformationParser: _router.routeInformationParser,
+              routerDelegate: _router.routerDelegate,
+              title: 'Asgard',
+            ),
           ),
         ),
       ),

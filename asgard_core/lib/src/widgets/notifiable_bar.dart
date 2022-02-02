@@ -107,7 +107,7 @@ class AppNotifiableBarLayout extends StatelessWidget {
     return AnimatedContainer(
       duration: theme.durations.regular,
       decoration: BoxDecoration(
-        borderRadius: theme.radius.asBorderRadius().small,
+        borderRadius: theme.radius.asBorderRadius().regular,
         color: theme.colors.accent,
         boxShadow: [
           BoxShadow(

@@ -1,6 +1,7 @@
 import 'package:asgard/services/services.dart';
 import 'package:asgard_core/asgard_core.dart';
 import 'package:equatable/equatable.dart';
+import 'package:collection/collection.dart';
 
 class CatalogState extends Equatable {
   const CatalogState({
@@ -75,6 +76,10 @@ class CatalogState extends Equatable {
             imageAspectRatio: 0.92,
           ),
         ],
+      );
+
+  Product? getProduct(String id) => products.firstWhereOrNull(
+        (product) => product.id == id,
       );
 
   @override

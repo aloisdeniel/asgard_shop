@@ -31,7 +31,7 @@ class AppColorsData extends Equatable {
         accentHighlight: Color(0xFF2D33B9),
         accentHighlight2: Color(0xFF272C9A),
         foreground: Color(0xFFFFFFFF),
-        background: Color(0xFF222222),
+        background: Color(0xFF111111),
         actionBarBackground: Color(0xFF000000),
         actionBarForeground: Color(0xFFFFFFFF),
       );
@@ -43,7 +43,7 @@ class AppColorsData extends Equatable {
         accentHighlight2: Color(0xFF000000),
         foreground: Color(0xFF222222),
         background: Color(0xFFFFFFFF),
-        actionBarBackground: Color(0xFFAAAAAA),
+        actionBarBackground: Color(0xFFDDDDDD),
         actionBarForeground: Color(0xFF222222),
       );
 
