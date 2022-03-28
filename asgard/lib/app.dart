@@ -3,6 +3,7 @@ import 'package:asgard/features/cart/state.dart';
 import 'package:asgard/features/catalog/view.dart';
 import 'package:asgard/features/notifications/state.dart';
 import 'package:asgard_core/asgard_core.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
@@ -44,6 +45,7 @@ class App extends StatelessWidget {
           child: StateProvider<AccountState, AccountNotifier>(
             create: (context) => AccountNotifier.demo(),
             child: AppBase(
+              colorMode: AppThemeColorMode.light,
               appLogo: ExactAssetPicture(
                 SvgPicture.svgStringDecoderBuilder,
                 'assets/images/logo.svg',

@@ -1,5 +1,5 @@
 import 'package:asgard_core/asgard_core.dart';
-import 'package:asgard_core/src/widgets/base/tap.dart';
+import 'package:tap_builder/tap_builder.dart';
 
 class AppButton extends StatelessWidget {
   const AppButton({
@@ -20,11 +20,11 @@ class AppButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppTapBuilder(
+    return TapBuilder(
       onTap: onTap,
-      builder: (context, state) {
+      builder: (context, state, hasFocus) {
         switch (state) {
-          case AppTapState.hovered:
+          case TapState.hover:
             return Semantics(
               enabled: true,
               selected: true,
@@ -34,7 +34,7 @@ class AppButton extends StatelessWidget {
                 mainAxisSize: mainAxisSize,
               ),
             );
-          case AppTapState.pressed:
+          case TapState.pressed:
             return Semantics(
               enabled: true,
               selected: true,

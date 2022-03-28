@@ -35,8 +35,10 @@ class AppBase extends StatelessWidget {
     this.localeResolutionCallback,
     this.localizationsDelegates,
     this.restorationScopeId,
+    this.colorMode,
   }) : super(key: key);
 
+  final AppThemeColorMode? colorMode;
   final Iterable<LocalizationsDelegate<dynamic>>? localizationsDelegates;
   final bool useInheritedMediaQuery;
   final bool debugShowGrid;
@@ -98,6 +100,7 @@ class AppBase extends StatelessWidget {
     Widget result = AppResponsiveTheme(
       appLogo: appLogo,
       darkAppLogo: darkAppLogo,
+      colorMode: colorMode,
       child: cupertino.Builder(builder: (context) {
         final theme = AppTheme.of(context);
         return WidgetsApp.router(

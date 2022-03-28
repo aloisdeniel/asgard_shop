@@ -15,6 +15,7 @@ dependencies:
   gap: ^2.0.0
   sliver_tools: ^0.2.5
   flutter_svg: ^1.0.3
+  tap_builder: ^0.3.4
 
 dev_dependencies:
   test_utils:

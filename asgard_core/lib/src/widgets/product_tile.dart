@@ -1,5 +1,5 @@
 import 'package:asgard_core/asgard_core.dart';
-import 'package:asgard_core/src/widgets/base/tap.dart';
+import 'package:tap_builder/tap_builder.dart';
 
 class ProductTile extends StatelessWidget {
   const ProductTile({
@@ -19,12 +19,12 @@ class ProductTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppTapBuilder(
+    return TapBuilder(
       onTap: onTap,
-      builder: (context, state) {
+      builder: (context, state, hasFocus) {
         switch (state) {
-          case AppTapState.pressed:
-          case AppTapState.hovered:
+          case TapState.pressed:
+          case TapState.hover:
             return ProductTileLayout.hovered(
               image: image,
               name: name,
