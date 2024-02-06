@@ -12,8 +12,10 @@ dependencies:
   equatable: ^2.0.3
   flutter:
     sdk: flutter
-  gap: ^2.0.0
-  sliver_tools: ^0.2.5
+  # gap: ^2.0.0
+  gap: ^3.0.1
+  # sliver_tools: ^0.2.5
+  sliver_tools: ^0.2.12
   flutter_svg: ^1.0.3
   tap_builder: ^0.3.4
 

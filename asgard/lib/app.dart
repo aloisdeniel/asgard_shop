@@ -27,7 +27,7 @@ class App extends StatelessWidget {
         pageBuilder: (context, state) => TransparentPage<void>(
           key: state.pageKey,
           child: ProductDetailView(
-            productId: state.params['id']!,
+            productId: state.pathParameters['id']!,
           ),
         ),
       ),
@@ -56,6 +56,7 @@ class App extends StatelessWidget {
               ),
               routeInformationParser: _router.routeInformationParser,
               routerDelegate: _router.routerDelegate,
+              routeInformationProvider: _router.routeInformationProvider,
               title: 'Asgard',
             ),
           ),

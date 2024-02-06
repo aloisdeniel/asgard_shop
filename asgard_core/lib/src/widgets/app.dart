@@ -192,7 +192,8 @@ class _ScrollBehaviour extends ScrollBehavior {
   const _ScrollBehaviour({
     AndroidOverscrollIndicator? androidOverscrollIndicator,
   })  : _androidOverscrollIndicator = androidOverscrollIndicator,
-        super(androidOverscrollIndicator: androidOverscrollIndicator);
+        super();
+  // super(androidOverscrollIndicator: androidOverscrollIndicator);
 
   final AndroidOverscrollIndicator? _androidOverscrollIndicator;
 
@@ -226,7 +227,9 @@ class _ScrollBehaviour extends ScrollBehavior {
   Widget buildOverscrollIndicator(
       BuildContext context, Widget child, ScrollableDetails details) {
     final theme = AppTheme.of(context);
-    final indicator = _androidOverscrollIndicator ?? androidOverscrollIndicator;
+    final indicator =
+        _androidOverscrollIndicator ?? AndroidOverscrollIndicator.stretch;
+    //  androidOverscrollIndicator;
     switch (getPlatform(context)) {
       case TargetPlatform.iOS:
       case TargetPlatform.linux:
