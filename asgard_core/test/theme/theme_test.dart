@@ -1,7 +1,7 @@
 import 'package:asgard_core/asgard_core.dart';
 import 'package:asgard_core/src/theme/data/form_factor.dart';
 import 'package:asgard_core/src/theme/responsive_theme.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:test_utils/test_utils.dart';
 
