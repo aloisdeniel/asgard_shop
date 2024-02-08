@@ -331,10 +331,10 @@ packages:
     dependency: "direct main"
     description:
       name: provider
-      sha256: "7896193cf752c40ba7f7732a95264319a787871e5d628225357f5c909182bc06"
+      sha256: "9a96a0a19b594dbc5bf0f1f27d2bc67d5f95957359b461cd9feb44ed6ae75096"
       url: "https://pub.dev"
     source: hosted
-    version: "6.0.2"
+    version: "6.1.1"
   pub_semver:
     dependency: transitive
     description:

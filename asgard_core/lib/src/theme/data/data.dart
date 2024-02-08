@@ -3,7 +3,6 @@ import 'package:asgard_core/src/theme/data/spacing.dart';
 import 'package:asgard_core/src/theme/data/typography.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'colors.dart';
@@ -54,7 +53,7 @@ class AppThemeData extends Equatable {
   final AppImagesData images;
   final AppFormFactor formFactor;
   final TargetPlatform? _platform;
-  TargetPlatform get platform => defaultTargetPlatform;
+  TargetPlatform get platform => _platform ?? defaultTargetPlatform;
 
   @override
   List<Object?> get props => [
